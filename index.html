@@ -1,11 +1,166 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Impact Celestial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Celestial Studio</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        /* Menu superior */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #1f1f1f;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* Seções */
+        section {
+            padding: 100px 30px 50px 30px; /* topo maior por causa do header fixo */
+        }
+
+        section h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #f39c12;
+        }
+
+        section p {
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        /* Footer simples */
+        footer {
+            background-color: #1f1f1f;
+            padding: 20px 30px;
+            text-align: center;
+            color: #aaa;
+            margin-top: 50px;
+        }
+
+        /* Responsividade básica */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                background-color: #1f1f1f;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                color: #fff;
+                font-size: 1.5em;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bem-vindo ao site do Impact Celestial!</h1>
-    <p>Arquivo <code>app-ads.txt</code> disponível em <a href="app-ads.txt">app-ads.txt</a></p>
+    <header>
+        <a href="#" class="logo">Impact Celestial</a>
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <nav>
+            <ul id="menu">
+                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="#carreiras">Carreiras</a></li>
+                <li><a href="#jogos">Jogos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="quem-somos">
+        <h1>Quem Somos</h1>
+        <p>
+            Somos o Impact Celestial Studio, um estúdio independente de jogos focado em criar experiências únicas para jogadores de todo o mundo. 
+            Nosso objetivo é entregar jogos com identidade própria, mecânicas envolventes e gráficos imersivos.
+        </p>
+    </section>
+
+    <section id="carreiras">
+        <h1>Carreiras</h1>
+        <p>
+            Estamos sempre em busca de talentos apaixonados por games! Se você tem interesse em desenvolvimento, arte, design ou som, envie seu portfólio e venha fazer parte da nossa equipe.
+        </p>
+    </section>
+
+    <section id="jogos">
+        <h1>Jogos</h1>
+        <p>
+            Conheça nossos jogos e projetos em andamento. Cada título é desenvolvido com cuidado, garantindo diversão, desafio e inovação.
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2025 Impact Celestial Studio. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
